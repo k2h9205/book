@@ -44,6 +44,7 @@ phases:
           kind: Service
           metadata:
             name: $_PROJECT_NAME
+            namespace: istio-cb-ns
             labels:
               app: $_PROJECT_NAME
           spec:
@@ -57,6 +58,7 @@ phases:
           cat  <<EOF | kubectl apply -f -
           apiVersion: apps/v1
           kind: Deployment
+          namespace: istio-cb-ns
           metadata:
             name: $_PROJECT_NAME
             labels:
